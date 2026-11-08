@@ -1,0 +1,1063 @@
+{
+  "metrics": {
+    "deck": {
+      "svm": {
+        "accuracy": 0.49474747474747466,
+        "accuracy_std": 0.13873076210577617,
+        "f1": 0.35203197644893647,
+        "f1_std": 0.12090205815081144,
+        "mean_kl": 1.246809404432257,
+        "mean_kl_std": 0.1319154280025902,
+        "n_folds": 50
+      },
+      "pnn": {
+        "accuracy": 0.3963636363636363,
+        "accuracy_std": 0.14665552429603224,
+        "f1": 0.34110548540724717,
+        "f1_std": 0.11539867727613057,
+        "mean_kl": 1.2989092835103586,
+        "mean_kl_std": 0.1294351593760226,
+        "n_folds": 50
+      },
+      "kl_pnn": {
+        "accuracy": 0.4123232323232323,
+        "accuracy_std": 0.14987346710378666,
+        "f1": 0.23831223214041855,
+        "f1_std": 0.07573736927266324,
+        "mean_kl": 1.3072137967580966,
+        "mean_kl_std": 0.12015376552692486,
+        "n_folds": 50
+      }
+    },
+    "switch": {
+      "svm": {
+        "accuracy": 0.7119191919191918,
+        "accuracy_std": 0.10822010570448934,
+        "f1": 0.6760992689928382,
+        "f1_std": 0.19311048585874174,
+        "mean_kl": 0.5928859230996539,
+        "mean_kl_std": 0.10016378550661507,
+        "n_folds": 50
+      },
+      "pnn": {
+        "accuracy": 0.7038383838383838,
+        "accuracy_std": 0.10716051666477341,
+        "f1": 0.6477838242957518,
+        "f1_std": 0.20819637984332745,
+        "mean_kl": 0.6033164012772556,
+        "mean_kl_std": 0.08135302978920952,
+        "n_folds": 50
+      },
+      "kl_pnn": {
+        "accuracy": 0.7028282828282828,
+        "accuracy_std": 0.10888858674928603,
+        "f1": 0.652577933525102,
+        "f1_std": 0.20851866865490842,
+        "mean_kl": 0.5987100967945745,
+        "mean_kl_std": 0.09493357366164429,
+        "n_folds": 50
+      }
+    },
+    "loss": "kl_divergence_for_discrete_distributions",
+    "cv": {
+      "method": "leave_one_participant_out",
+      "n_folds": 50,
+      "n_participants": 50,
+      "n_trials_evaluated": 4950,
+      "note": "Each fold trains on 49 participants and tests on 1; every trial is used for testing exactly once. Serving models are then refit on all data."
+    },
+    "n_train_trials": 4950,
+    "n_test_trials": 4950,
+    "situation_features": [
+      "trial_number",
+      "previous_choice",
+      "previous_net_outcome",
+      "cumulative_net_outcome_before_trial",
+      "recent_loss_count_5",
+      "switched_deck_lag"
+    ]
+  },
+  "cluster_to_tier": {
+    "2": "A",
+    "0": "B",
+    "1": "C"
+  },
+  "tiers_summary": [
+    {
+      "tier": "A",
+      "cluster": 2,
+      "n_participants": 13,
+      "late_advantageous_rate": 0.7338461538461539,
+      "late_bad_deck_rate": 0.26615384615384613,
+      "mean_net_outcome": 2.576923076923077
+    },
+    {
+      "tier": "B",
+      "cluster": 0,
+      "n_participants": 31,
+      "late_advantageous_rate": 0.47354838709677416,
+      "late_bad_deck_rate": 0.5264516129032258,
+      "mean_net_outcome": -1.8064516129032258
+    },
+    {
+      "tier": "C",
+      "cluster": 1,
+      "n_participants": 6,
+      "late_advantageous_rate": 0.19333333333333333,
+      "late_bad_deck_rate": 0.8066666666666666,
+      "mean_net_outcome": -14.833333333333334
+    }
+  ],
+  "profiles": {
+    "IGT100_001": {
+      "participant_id": "IGT100_001",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.77,
+      "bad_deck_rate": 0.63,
+      "late_bad_deck_rate": 0.68,
+      "late_advantageous_rate": 0.32,
+      "mean_net_outcome": -18.0,
+      "final_cumulative": -1800.0,
+      "loss_sensitivity": 0.8235294117647058,
+      "deck_prefs": {
+        "1": 0.21,
+        "2": 0.42,
+        "3": 0.15,
+        "4": 0.22
+      }
+    },
+    "IGT100_002": {
+      "participant_id": "IGT100_002",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.89,
+      "bad_deck_rate": 0.49,
+      "late_bad_deck_rate": 0.44,
+      "late_advantageous_rate": 0.56,
+      "mean_net_outcome": -8.0,
+      "final_cumulative": -800.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.14,
+        "2": 0.35,
+        "3": 0.18,
+        "4": 0.33
+      }
+    },
+    "IGT100_003": {
+      "participant_id": "IGT100_003",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.85,
+      "bad_deck_rate": 0.63,
+      "late_bad_deck_rate": 0.64,
+      "late_advantageous_rate": 0.36,
+      "mean_net_outcome": -4.5,
+      "final_cumulative": -450.0,
+      "loss_sensitivity": 0.8888888888888888,
+      "deck_prefs": {
+        "1": 0.21,
+        "2": 0.42,
+        "3": 0.07,
+        "4": 0.3
+      }
+    },
+    "IGT100_004": {
+      "participant_id": "IGT100_004",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.94,
+      "bad_deck_rate": 0.37,
+      "late_bad_deck_rate": 0.38,
+      "late_advantageous_rate": 0.62,
+      "mean_net_outcome": 12.0,
+      "final_cumulative": 1200.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.13,
+        "2": 0.24,
+        "3": 0.28,
+        "4": 0.35
+      }
+    },
+    "IGT100_005": {
+      "participant_id": "IGT100_005",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.53,
+      "bad_deck_rate": 0.46,
+      "late_bad_deck_rate": 0.32,
+      "late_advantageous_rate": 0.68,
+      "mean_net_outcome": -13.0,
+      "final_cumulative": -1300.0,
+      "loss_sensitivity": 0.75,
+      "deck_prefs": {
+        "1": 0.15,
+        "2": 0.31,
+        "3": 0.28,
+        "4": 0.26
+      }
+    },
+    "IGT100_006": {
+      "participant_id": "IGT100_006",
+      "cluster": 1,
+      "tier": "C",
+      "switch_rate": 0.44,
+      "bad_deck_rate": 0.86,
+      "late_bad_deck_rate": 0.94,
+      "late_advantageous_rate": 0.06,
+      "mean_net_outcome": -12.0,
+      "final_cumulative": -1200.0,
+      "loss_sensitivity": 0.6428571428571429,
+      "deck_prefs": {
+        "1": 0.12,
+        "2": 0.74,
+        "3": 0.06,
+        "4": 0.08
+      }
+    },
+    "IGT100_007": {
+      "participant_id": "IGT100_007",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.66,
+      "bad_deck_rate": 0.53,
+      "late_bad_deck_rate": 0.56,
+      "late_advantageous_rate": 0.44,
+      "mean_net_outcome": 4.0,
+      "final_cumulative": 400.0,
+      "loss_sensitivity": 0.9285714285714286,
+      "deck_prefs": {
+        "1": 0.14,
+        "2": 0.39,
+        "3": 0.12,
+        "4": 0.35
+      }
+    },
+    "IGT100_008": {
+      "participant_id": "IGT100_008",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.66,
+      "bad_deck_rate": 0.52,
+      "late_bad_deck_rate": 0.54,
+      "late_advantageous_rate": 0.46,
+      "mean_net_outcome": -10.0,
+      "final_cumulative": -1000.0,
+      "loss_sensitivity": 0.75,
+      "deck_prefs": {
+        "1": 0.3,
+        "2": 0.22,
+        "3": 0.24,
+        "4": 0.24
+      }
+    },
+    "IGT100_009": {
+      "participant_id": "IGT100_009",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.45,
+      "bad_deck_rate": 0.53,
+      "late_bad_deck_rate": 0.52,
+      "late_advantageous_rate": 0.48,
+      "mean_net_outcome": 7.0,
+      "final_cumulative": 700.0,
+      "loss_sensitivity": 0.9285714285714286,
+      "deck_prefs": {
+        "1": 0.14,
+        "2": 0.39,
+        "3": 0.11,
+        "4": 0.36
+      }
+    },
+    "IGT100_010": {
+      "participant_id": "IGT100_010",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.56,
+      "bad_deck_rate": 0.64,
+      "late_bad_deck_rate": 0.72,
+      "late_advantageous_rate": 0.28,
+      "mean_net_outcome": -1.0,
+      "final_cumulative": -100.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.19,
+        "2": 0.45,
+        "3": 0.15,
+        "4": 0.21
+      }
+    },
+    "IGT100_011": {
+      "participant_id": "IGT100_011",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.74,
+      "bad_deck_rate": 0.56,
+      "late_bad_deck_rate": 0.54,
+      "late_advantageous_rate": 0.46,
+      "mean_net_outcome": 0.5,
+      "final_cumulative": 50.0,
+      "loss_sensitivity": 0.9375,
+      "deck_prefs": {
+        "1": 0.22,
+        "2": 0.34,
+        "3": 0.27,
+        "4": 0.17
+      }
+    },
+    "IGT100_012": {
+      "participant_id": "IGT100_012",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.56,
+      "bad_deck_rate": 0.45,
+      "late_bad_deck_rate": 0.44,
+      "late_advantageous_rate": 0.56,
+      "mean_net_outcome": 1.5,
+      "final_cumulative": 150.0,
+      "loss_sensitivity": 0.8461538461538461,
+      "deck_prefs": {
+        "1": 0.17,
+        "2": 0.28,
+        "3": 0.3,
+        "4": 0.25
+      }
+    },
+    "IGT100_013": {
+      "participant_id": "IGT100_013",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.29,
+      "bad_deck_rate": 0.4,
+      "late_bad_deck_rate": 0.22,
+      "late_advantageous_rate": 0.78,
+      "mean_net_outcome": -0.5,
+      "final_cumulative": -50.0,
+      "loss_sensitivity": 0.9,
+      "deck_prefs": {
+        "1": 0.03,
+        "2": 0.37,
+        "3": 0.25,
+        "4": 0.35
+      }
+    },
+    "IGT100_014": {
+      "participant_id": "IGT100_014",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.3,
+      "bad_deck_rate": 0.5,
+      "late_bad_deck_rate": 0.44,
+      "late_advantageous_rate": 0.56,
+      "mean_net_outcome": -2.0,
+      "final_cumulative": -200.0,
+      "loss_sensitivity": 0.7272727272727273,
+      "deck_prefs": {
+        "1": 0.13,
+        "2": 0.37,
+        "3": 0.37,
+        "4": 0.13
+      }
+    },
+    "IGT100_015": {
+      "participant_id": "IGT100_015",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.87,
+      "bad_deck_rate": 0.51,
+      "late_bad_deck_rate": 0.52,
+      "late_advantageous_rate": 0.48,
+      "mean_net_outcome": 0.5,
+      "final_cumulative": 50.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.2,
+        "2": 0.31,
+        "3": 0.22,
+        "4": 0.27
+      }
+    },
+    "IGT100_016": {
+      "participant_id": "IGT100_016",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.15,
+      "bad_deck_rate": 0.4,
+      "late_bad_deck_rate": 0.24,
+      "late_advantageous_rate": 0.76,
+      "mean_net_outcome": 6.5,
+      "final_cumulative": 650.0,
+      "loss_sensitivity": 0.5555555555555556,
+      "deck_prefs": {
+        "1": 0.08,
+        "2": 0.32,
+        "3": 0.43,
+        "4": 0.17
+      }
+    },
+    "IGT100_017": {
+      "participant_id": "IGT100_017",
+      "cluster": 1,
+      "tier": "C",
+      "switch_rate": 0.29,
+      "bad_deck_rate": 0.8,
+      "late_bad_deck_rate": 0.84,
+      "late_advantageous_rate": 0.16,
+      "mean_net_outcome": -15.0,
+      "final_cumulative": -1500.0,
+      "loss_sensitivity": 0.46153846153846156,
+      "deck_prefs": {
+        "1": 0.1,
+        "2": 0.7,
+        "3": 0.11,
+        "4": 0.09
+      }
+    },
+    "IGT100_018": {
+      "participant_id": "IGT100_018",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.21,
+      "bad_deck_rate": 0.5,
+      "late_bad_deck_rate": 0.56,
+      "late_advantageous_rate": 0.44,
+      "mean_net_outcome": -8.5,
+      "final_cumulative": -850.0,
+      "loss_sensitivity": 0.8461538461538461,
+      "deck_prefs": {
+        "1": 0.05,
+        "2": 0.45,
+        "3": 0.02,
+        "4": 0.48
+      }
+    },
+    "IGT100_019": {
+      "participant_id": "IGT100_019",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.85,
+      "bad_deck_rate": 0.62,
+      "late_bad_deck_rate": 0.6,
+      "late_advantageous_rate": 0.4,
+      "mean_net_outcome": -2.5,
+      "final_cumulative": -250.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.21,
+        "2": 0.41,
+        "3": 0.16,
+        "4": 0.22
+      }
+    },
+    "IGT100_020": {
+      "participant_id": "IGT100_020",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.76,
+      "bad_deck_rate": 0.48,
+      "late_bad_deck_rate": 0.46,
+      "late_advantageous_rate": 0.54,
+      "mean_net_outcome": 4.5,
+      "final_cumulative": 450.0,
+      "loss_sensitivity": 0.8,
+      "deck_prefs": {
+        "1": 0.03,
+        "2": 0.45,
+        "3": 0.19,
+        "4": 0.33
+      }
+    },
+    "IGT100_021": {
+      "participant_id": "IGT100_021",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.68,
+      "bad_deck_rate": 0.54,
+      "late_bad_deck_rate": 0.56,
+      "late_advantageous_rate": 0.44,
+      "mean_net_outcome": -7.5,
+      "final_cumulative": -750.0,
+      "loss_sensitivity": 0.6,
+      "deck_prefs": {
+        "1": 0.26,
+        "2": 0.28,
+        "3": 0.17,
+        "4": 0.29
+      }
+    },
+    "IGT100_022": {
+      "participant_id": "IGT100_022",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.63,
+      "bad_deck_rate": 0.6,
+      "late_bad_deck_rate": 0.54,
+      "late_advantageous_rate": 0.46,
+      "mean_net_outcome": 6.0,
+      "final_cumulative": 600.0,
+      "loss_sensitivity": 0.9166666666666666,
+      "deck_prefs": {
+        "1": 0.12,
+        "2": 0.48,
+        "3": 0.17,
+        "4": 0.23
+      }
+    },
+    "IGT100_023": {
+      "participant_id": "IGT100_023",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.5,
+      "bad_deck_rate": 0.51,
+      "late_bad_deck_rate": 0.6,
+      "late_advantageous_rate": 0.4,
+      "mean_net_outcome": -9.0,
+      "final_cumulative": -900.0,
+      "loss_sensitivity": 0.625,
+      "deck_prefs": {
+        "1": 0.16,
+        "2": 0.35,
+        "3": 0.08,
+        "4": 0.41
+      }
+    },
+    "IGT100_024": {
+      "participant_id": "IGT100_024",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.74,
+      "bad_deck_rate": 0.52,
+      "late_bad_deck_rate": 0.46,
+      "late_advantageous_rate": 0.54,
+      "mean_net_outcome": 3.5,
+      "final_cumulative": 350.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.18,
+        "2": 0.34,
+        "3": 0.21,
+        "4": 0.27
+      }
+    },
+    "IGT100_025": {
+      "participant_id": "IGT100_025",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.46,
+      "bad_deck_rate": 0.36,
+      "late_bad_deck_rate": 0.12,
+      "late_advantageous_rate": 0.88,
+      "mean_net_outcome": 9.5,
+      "final_cumulative": 950.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.17,
+        "2": 0.19,
+        "3": 0.53,
+        "4": 0.11
+      }
+    },
+    "IGT100_026": {
+      "participant_id": "IGT100_026",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.53,
+      "bad_deck_rate": 0.18,
+      "late_bad_deck_rate": 0.22,
+      "late_advantageous_rate": 0.78,
+      "mean_net_outcome": 11.0,
+      "final_cumulative": 1100.0,
+      "loss_sensitivity": 0.75,
+      "deck_prefs": {
+        "1": 0.11,
+        "2": 0.07,
+        "3": 0.29,
+        "4": 0.53
+      }
+    },
+    "IGT100_027": {
+      "participant_id": "IGT100_027",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.68,
+      "bad_deck_rate": 0.63,
+      "late_bad_deck_rate": 0.64,
+      "late_advantageous_rate": 0.36,
+      "mean_net_outcome": -3.0,
+      "final_cumulative": -300.0,
+      "loss_sensitivity": 0.5,
+      "deck_prefs": {
+        "1": 0.3,
+        "2": 0.33,
+        "3": 0.18,
+        "4": 0.19
+      }
+    },
+    "IGT100_028": {
+      "participant_id": "IGT100_028",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.32,
+      "bad_deck_rate": 0.35,
+      "late_bad_deck_rate": 0.32,
+      "late_advantageous_rate": 0.68,
+      "mean_net_outcome": 2.0,
+      "final_cumulative": 200.0,
+      "loss_sensitivity": 0.5833333333333334,
+      "deck_prefs": {
+        "1": 0.06,
+        "2": 0.29,
+        "3": 0.11,
+        "4": 0.54
+      }
+    },
+    "IGT100_029": {
+      "participant_id": "IGT100_029",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.84,
+      "bad_deck_rate": 0.59,
+      "late_bad_deck_rate": 0.56,
+      "late_advantageous_rate": 0.44,
+      "mean_net_outcome": -3.0,
+      "final_cumulative": -300.0,
+      "loss_sensitivity": 0.8,
+      "deck_prefs": {
+        "1": 0.28,
+        "2": 0.31,
+        "3": 0.1,
+        "4": 0.31
+      }
+    },
+    "IGT100_030": {
+      "participant_id": "IGT100_030",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.8,
+      "bad_deck_rate": 0.54,
+      "late_bad_deck_rate": 0.52,
+      "late_advantageous_rate": 0.48,
+      "mean_net_outcome": 4.0,
+      "final_cumulative": 400.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.1,
+        "2": 0.44,
+        "3": 0.22,
+        "4": 0.24
+      }
+    },
+    "IGT100_031": {
+      "participant_id": "IGT100_031",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.14,
+      "bad_deck_rate": 0.37,
+      "late_bad_deck_rate": 0.08,
+      "late_advantageous_rate": 0.92,
+      "mean_net_outcome": 7.5,
+      "final_cumulative": 750.0,
+      "loss_sensitivity": 0.25,
+      "deck_prefs": {
+        "1": 0.17,
+        "2": 0.2,
+        "3": 0.5,
+        "4": 0.13
+      }
+    },
+    "IGT100_032": {
+      "participant_id": "IGT100_032",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.54,
+      "bad_deck_rate": 0.49,
+      "late_bad_deck_rate": 0.46,
+      "late_advantageous_rate": 0.54,
+      "mean_net_outcome": -6.0,
+      "final_cumulative": -600.0,
+      "loss_sensitivity": 0.7222222222222222,
+      "deck_prefs": {
+        "1": 0.24,
+        "2": 0.25,
+        "3": 0.2,
+        "4": 0.31
+      }
+    },
+    "IGT100_033": {
+      "participant_id": "IGT100_033",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.19,
+      "bad_deck_rate": 0.36,
+      "late_bad_deck_rate": 0.52,
+      "late_advantageous_rate": 0.48,
+      "mean_net_outcome": 5.0,
+      "final_cumulative": 500.0,
+      "loss_sensitivity": 0.5833333333333334,
+      "deck_prefs": {
+        "1": 0.07,
+        "2": 0.29,
+        "3": 0.13,
+        "4": 0.51
+      }
+    },
+    "IGT100_034": {
+      "participant_id": "IGT100_034",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.54,
+      "bad_deck_rate": 0.64,
+      "late_bad_deck_rate": 0.56,
+      "late_advantageous_rate": 0.44,
+      "mean_net_outcome": -4.0,
+      "final_cumulative": -400.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.11,
+        "2": 0.53,
+        "3": 0.06,
+        "4": 0.3
+      }
+    },
+    "IGT100_035": {
+      "participant_id": "IGT100_035",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.96,
+      "bad_deck_rate": 0.5,
+      "late_bad_deck_rate": 0.46,
+      "late_advantageous_rate": 0.54,
+      "mean_net_outcome": 8.5,
+      "final_cumulative": 850.0,
+      "loss_sensitivity": 0.9375,
+      "deck_prefs": {
+        "1": 0.26,
+        "2": 0.24,
+        "3": 0.27,
+        "4": 0.23
+      }
+    },
+    "IGT100_036": {
+      "participant_id": "IGT100_036",
+      "cluster": 1,
+      "tier": "C",
+      "switch_rate": 0.31,
+      "bad_deck_rate": 0.68,
+      "late_bad_deck_rate": 0.66,
+      "late_advantageous_rate": 0.34,
+      "mean_net_outcome": -3.0,
+      "final_cumulative": -300.0,
+      "loss_sensitivity": 0.2777777777777778,
+      "deck_prefs": {
+        "1": 0.23,
+        "2": 0.45,
+        "3": 0.1,
+        "4": 0.22
+      }
+    },
+    "IGT100_037": {
+      "participant_id": "IGT100_037",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.8,
+      "bad_deck_rate": 0.55,
+      "late_bad_deck_rate": 0.5,
+      "late_advantageous_rate": 0.5,
+      "mean_net_outcome": 3.5,
+      "final_cumulative": 350.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.2,
+        "2": 0.35,
+        "3": 0.15,
+        "4": 0.3
+      }
+    },
+    "IGT100_038": {
+      "participant_id": "IGT100_038",
+      "cluster": 1,
+      "tier": "C",
+      "switch_rate": 0.3,
+      "bad_deck_rate": 0.7,
+      "late_bad_deck_rate": 0.7,
+      "late_advantageous_rate": 0.3,
+      "mean_net_outcome": -15.0,
+      "final_cumulative": -1500.0,
+      "loss_sensitivity": 0.5,
+      "deck_prefs": {
+        "1": 0.03,
+        "2": 0.67,
+        "3": 0.05,
+        "4": 0.25
+      }
+    },
+    "IGT100_039": {
+      "participant_id": "IGT100_039",
+      "cluster": 1,
+      "tier": "C",
+      "switch_rate": 0.22,
+      "bad_deck_rate": 0.68,
+      "late_bad_deck_rate": 0.84,
+      "late_advantageous_rate": 0.16,
+      "mean_net_outcome": -21.0,
+      "final_cumulative": -2100.0,
+      "loss_sensitivity": 0.5,
+      "deck_prefs": {
+        "1": 0.16,
+        "2": 0.52,
+        "3": 0.08,
+        "4": 0.24
+      }
+    },
+    "IGT100_040": {
+      "participant_id": "IGT100_040",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.51,
+      "bad_deck_rate": 0.37,
+      "late_bad_deck_rate": 0.24,
+      "late_advantageous_rate": 0.76,
+      "mean_net_outcome": 10.0,
+      "final_cumulative": 1000.0,
+      "loss_sensitivity": 0.75,
+      "deck_prefs": {
+        "1": 0.02,
+        "2": 0.35,
+        "3": 0.35,
+        "4": 0.28
+      }
+    },
+    "IGT100_041": {
+      "participant_id": "IGT100_041",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.38,
+      "bad_deck_rate": 0.37,
+      "late_bad_deck_rate": 0.2,
+      "late_advantageous_rate": 0.8,
+      "mean_net_outcome": 3.5,
+      "final_cumulative": 350.0,
+      "loss_sensitivity": 0.9230769230769231,
+      "deck_prefs": {
+        "1": 0.15,
+        "2": 0.22,
+        "3": 0.47,
+        "4": 0.16
+      }
+    },
+    "IGT100_042": {
+      "participant_id": "IGT100_042",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.75,
+      "bad_deck_rate": 0.62,
+      "late_bad_deck_rate": 0.62,
+      "late_advantageous_rate": 0.38,
+      "mean_net_outcome": 0.5,
+      "final_cumulative": 50.0,
+      "loss_sensitivity": 0.7222222222222222,
+      "deck_prefs": {
+        "1": 0.27,
+        "2": 0.35,
+        "3": 0.2,
+        "4": 0.18
+      }
+    },
+    "IGT100_043": {
+      "participant_id": "IGT100_043",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.38,
+      "bad_deck_rate": 0.54,
+      "late_bad_deck_rate": 0.42,
+      "late_advantageous_rate": 0.58,
+      "mean_net_outcome": -0.5,
+      "final_cumulative": -50.0,
+      "loss_sensitivity": 1.0,
+      "deck_prefs": {
+        "1": 0.15,
+        "2": 0.39,
+        "3": 0.2,
+        "4": 0.26
+      }
+    },
+    "IGT100_044": {
+      "participant_id": "IGT100_044",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.23,
+      "bad_deck_rate": 0.52,
+      "late_bad_deck_rate": 0.32,
+      "late_advantageous_rate": 0.68,
+      "mean_net_outcome": -10.5,
+      "final_cumulative": -1050.0,
+      "loss_sensitivity": 0.3181818181818182,
+      "deck_prefs": {
+        "1": 0.29,
+        "2": 0.23,
+        "3": 0.04,
+        "4": 0.44
+      }
+    },
+    "IGT100_045": {
+      "participant_id": "IGT100_045",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.69,
+      "bad_deck_rate": 0.66,
+      "late_bad_deck_rate": 0.76,
+      "late_advantageous_rate": 0.24,
+      "mean_net_outcome": -13.0,
+      "final_cumulative": -1300.0,
+      "loss_sensitivity": 0.9375,
+      "deck_prefs": {
+        "1": 0.18,
+        "2": 0.48,
+        "3": 0.19,
+        "4": 0.15
+      }
+    },
+    "IGT100_046": {
+      "participant_id": "IGT100_046",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.24,
+      "bad_deck_rate": 0.29,
+      "late_bad_deck_rate": 0.06,
+      "late_advantageous_rate": 0.94,
+      "mean_net_outcome": -3.0,
+      "final_cumulative": -300.0,
+      "loss_sensitivity": 0.7857142857142857,
+      "deck_prefs": {
+        "1": 0.07,
+        "2": 0.22,
+        "3": 0.1,
+        "4": 0.61
+      }
+    },
+    "IGT100_047": {
+      "participant_id": "IGT100_047",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.74,
+      "bad_deck_rate": 0.49,
+      "late_bad_deck_rate": 0.52,
+      "late_advantageous_rate": 0.48,
+      "mean_net_outcome": -2.5,
+      "final_cumulative": -250.0,
+      "loss_sensitivity": 0.8333333333333334,
+      "deck_prefs": {
+        "1": 0.22,
+        "2": 0.27,
+        "3": 0.11,
+        "4": 0.4
+      }
+    },
+    "IGT100_048": {
+      "participant_id": "IGT100_048",
+      "cluster": 2,
+      "tier": "A",
+      "switch_rate": 0.26,
+      "bad_deck_rate": 0.38,
+      "late_bad_deck_rate": 0.24,
+      "late_advantageous_rate": 0.76,
+      "mean_net_outcome": -7.5,
+      "final_cumulative": -750.0,
+      "loss_sensitivity": 0.8,
+      "deck_prefs": {
+        "1": 0.04,
+        "2": 0.34,
+        "3": 0.44,
+        "4": 0.18
+      }
+    },
+    "IGT100_049": {
+      "participant_id": "IGT100_049",
+      "cluster": 0,
+      "tier": "B",
+      "switch_rate": 0.5,
+      "bad_deck_rate": 0.52,
+      "late_bad_deck_rate": 0.46,
+      "late_advantageous_rate": 0.54,
+      "mean_net_outcome": 4.0,
+      "final_cumulative": 400.0,
+      "loss_sensitivity": 0.625,
+      "deck_prefs": {
+        "1": 0.17,
+        "2": 0.35,
+        "3": 0.11,
+        "4": 0.37
+      }
+    },
+    "IGT100_050": {
+      "participant_id": "IGT100_050",
+      "cluster": 1,
+      "tier": "C",
+      "switch_rate": 0.29,
+      "bad_deck_rate": 0.82,
+      "late_bad_deck_rate": 0.86,
+      "late_advantageous_rate": 0.14,
+      "mean_net_outcome": -23.0,
+      "final_cumulative": -2300.0,
+      "loss_sensitivity": 0.5714285714285714,
+      "deck_prefs": {
+        "1": 0.29,
+        "2": 0.53,
+        "3": 0.1,
+        "4": 0.08
+      }
+    }
+  },
+  "person_features": [
+    "switch_rate",
+    "bad_deck_rate",
+    "late_bad_deck_rate",
+    "mean_net_outcome",
+    "loss_sensitivity",
+    "deck1_rate",
+    "deck2_rate",
+    "deck3_rate",
+    "deck4_rate"
+  ],
+  "situation_features": [
+    "trial_number",
+    "previous_choice",
+    "previous_net_outcome",
+    "cumulative_net_outcome_before_trial",
+    "recent_loss_count_5",
+    "switched_deck_lag"
+  ],
+  "default_deck_model": "svm",
+  "default_switch_model": "svm",
+  "best_models": {
+    "deck": "svm",
+    "switch": "svm",
+    "selection_rule": "50-fold LOSO CV: max_accuracy then max_f1 then min_mean_kl",
+    "deck_metrics": {
+      "accuracy": 0.49474747474747466,
+      "accuracy_std": 0.13873076210577617,
+      "f1": 0.35203197644893647,
+      "f1_std": 0.12090205815081144,
+      "mean_kl": 1.246809404432257,
+      "mean_kl_std": 0.1319154280025902,
+      "n_folds": 50
+    },
+    "switch_metrics": {
+      "accuracy": 0.7119191919191918,
+      "accuracy_std": 0.10822010570448934,
+      "f1": 0.6760992689928382,
+      "f1_std": 0.19311048585874174,
+      "mean_kl": 0.5928859230996539,
+      "mean_kl_std": 0.10016378550661507,
+      "n_folds": 50
+    }
+  },
+  "available_models": [
+    "best",
+    "svm",
+    "pnn",
+    "kl_pnn"
+  ]
+}
